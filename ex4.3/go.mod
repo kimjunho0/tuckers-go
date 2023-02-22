@@ -1,0 +1,3 @@
+module go_practice/ex4.3
+
+go 1.19
