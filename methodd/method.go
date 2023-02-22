@@ -41,9 +41,19 @@ func (i *information) WhatAge(Age int) {
 }
 
 func main() {
-	var a string
+	var a, c string
+	var b int
 
 	d := information{Name: ""}
+	fmt.Println("이름 입력 : ")
 	fmt.Scanln(&a)
 	d.WhatName(a)
+	e := information{Age: 0}
+	fmt.Println("나이 입력 : ")
+	fmt.Scanln(&b)
+	e.WhatAge(b)
+	f := information{Gender: ""}
+	fmt.Println("성별 입력 : ")
+	fmt.Scanln(&b)
+	f.WhatAge(b)
 }
