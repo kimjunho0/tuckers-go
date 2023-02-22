@@ -1,20 +1,43 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-type inform struct {
-	height int
-	weight int
+type information struct {
+	Name   string
+	Age    int
+	Gender string
 }
 
-func (infor inform) hw() int {
+func (i *information) WhatName(Name string) {
+	for {
+		var c string
+		fmt.Printf("이름이 %s맞나요?\ny/n : ", Name)
+		if c == "y" {
+			i.Name = Name
+			break
+		} else {
+			return
+		}
+	}
+}
+func (i *information) WhatAge(Age int) {
+	for {
+		var c string
+		fmt.Printf("나이가 %d살맞나요?\ny/n : ", Age)
 
-	i := infor.height * infor.weight
-	return i
+		if c == "y" {
+			i.Age = Age
+			break
+		} else {
+			return
+		}
+	}
 }
 
 func main() {
-	i := inform{180, 70}
-	fmt.Println(i.hw())
-	fmt.Println(i)
+	var a string
+	d := information{Name: ""}
+	d.WhatName(a)
 }
