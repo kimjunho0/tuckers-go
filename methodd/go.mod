@@ -1,3 +1,3 @@
-module go_practice
+module go_practice/methodd
 
 go 1.19
