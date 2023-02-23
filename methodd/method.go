@@ -39,6 +39,20 @@ func (i *information) WhatAge(Age int) {
 		}
 	}
 }
+func (i *information) WhatGender(Gender string) {
+	for {
+		var c string
+		fmt.Printf("성별이 %s맞나요?\ny/n : ", Gender)
+		fmt.Scanln(&c)
+		if c == "y" {
+			i.Gender = Gender
+			break
+		} else {
+			main()
+			break
+		}
+	}
+}
 
 func main() {
 	var a, c string
@@ -53,7 +67,22 @@ func main() {
 	fmt.Scanln(&b)
 	e.WhatAge(b)
 	f := information{Gender: ""}
-	fmt.Println("성별 입력 : ")
-	fmt.Scanln(&b)
-	f.WhatAge(b)
+
+	for {
+		fmt.Println("성별 입력 : male or female")
+		fmt.Scanln(&c)
+		if c == "male" {
+			c = "남자"
+			f.WhatGender(c)
+			break
+		} else if c == "female" {
+			c = "여자"
+			f.WhatGender(c)
+			break
+		} else {
+			continue
+		}
+
+	}
+	fmt.Printf("이름 : %s\n나이 : %d\n성별 : %s", d.Name, e.Age, f.Gender)
 }
